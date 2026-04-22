@@ -2,9 +2,19 @@ import React, { useContext, useState } from "react";
 import "./FoodItem.css";
 import { assets } from "../../assets/frontend_assets/assets";
 import { StoreContext } from "../../context/StoreContext";
+import { toast } from "react-toastify";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const {cartItems,addToCart,removeFromCart,url}=useContext(StoreContext); 
+  const {cartItems,addToCart,removeFromCart,url,token,setShowLogin}=useContext(StoreContext); 
+
+  const handleAddToCart = (id) => {
+    if (!token) {
+      setShowLogin(true);
+      toast.info("Please Login to Add items to cart");
+      return;
+    }
+    addToCart(id);
+  }
 
   return (
     <div className="food-item">
@@ -13,7 +23,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
         {!cartItems[id] ? (
           <img
             className="add"
-            onClick={() => addToCart(id)}
+            onClick={() => handleAddToCart(id)}
             src={assets.add_icon_white}
             alt=""
           />
@@ -21,7 +31,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
           <div className="food-item-counter">
             <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
             <p>{cartItems[id]}</p>
-            <img onClick={()=>addToCart(id)} src={assets.add_icon_green} alt="" />
+            <img onClick={()=>handleAddToCart(id)} src={assets.add_icon_green} alt="" />
           </div>
         )}
       </div>

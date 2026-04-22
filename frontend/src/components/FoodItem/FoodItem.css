@@ -5,36 +5,56 @@
     box-shadow: 0px 0px 10px #00000015;
     transition: 0.3s;
     animation: fadeIn 1s;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure card takes full height of grid cell */
+    background-color: white;
 }
 .food-item-image{
     width: 100%;
+    height: 200px; /* Fixed height for image */
+    object-fit: cover; /* Maintain aspect ratio */
     border-radius: 15px 15px 0px 0px;
 }
 .food-item-info{
     padding: 20px;
+    flex-grow: 1; /* Take up remaining space */
+    display: flex;
+    flex-direction: column;
 }
 .food-item-name-rating{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
     margin-bottom: 10px;
+    min-height: 50px; /* Consistent height for name section */
 }
 .food-item-name-rating p{
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 1.2;
 }
 .food-item-name-rating img{
     width: 70px;
+    flex-shrink: 0;
+    margin-top: 4px;
 }
 .food-item-desc{
     color: #676767;
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    flex-grow: 1; /* Push price to bottom */
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Truncate after 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 .food-item-price{
-    color: tomato;
-    font-size: 22px;
-    font-weight: 500;
-    margin: 10px 0px;
+    color: var(--primary-color);
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: auto; /* Always at the bottom */
 }
 .food-item-img-container{
     position: relative;

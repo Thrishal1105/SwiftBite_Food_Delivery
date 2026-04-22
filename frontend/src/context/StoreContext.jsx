@@ -6,9 +6,10 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
   const [cartItems, setCartItems] = useState({});
-  const url = "https://food-delivery-backend-5b6g.onrender.com";
+  const url = import.meta.env.VITE_BACKEND_URL;
   const [token, setToken] = useState("");
   const [food_list, setFoodList] = useState([]);
+  const [showLogin, setShowLogin] = useState(false);
 
   const addToCart = async (itemId) => {
     if (!cartItems[itemId]) {
@@ -51,7 +52,9 @@ const StoreContextProvider = (props) => {
     for (const item in cartItems) {
       if (cartItems[item] > 0) {
         let itemInfo = food_list.find((product) => product._id === item);
-        totalAmount += itemInfo.price * cartItems[item];
+        if (itemInfo) {
+          totalAmount += itemInfo.price * cartItems[item];
+        }
       }
     }
     return totalAmount;
@@ -96,6 +99,8 @@ const StoreContextProvider = (props) => {
     url,
     token,
     setToken,
+    showLogin,
+    setShowLogin,
   };
   return (
     <StoreContext.Provider value={contextValue}>

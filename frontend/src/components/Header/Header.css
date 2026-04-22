@@ -40,13 +40,26 @@
     }
 }
 @media (max-width:750px) {
+    .header {
+        height: 60vw;
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+    }
     .header-contents{
-        max-width: 65%;
+        max-width: 80%;
+        bottom: 15%;
+        left: 5vw;
+    }
+    .header-contents h2 {
+        font-size: 28px;
+        line-height: 1.2;
     }
     .header-contents p{
         display: none;
     }
     .header-contents button{
-        padding: 2vw 4vw;
+        padding: 10px 20px;
+        font-size: 14px;
     }
 }
