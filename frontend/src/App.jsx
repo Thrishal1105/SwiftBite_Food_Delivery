@@ -11,14 +11,17 @@ import "react-toastify/dist/ReactToastify.css";
 import Verify from "./pages/Verify/Verify";
 import MyOrders from "./pages/MyOrders/MyOrders";
 
+import { StoreContext } from "./context/StoreContext";
+import { useContext } from "react";
+
 const App = () => {
-  const [showLogin, setShowLogin] = useState(false);
+  const { showLogin, setShowLogin } = useContext(StoreContext);
   return (
     <>
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} /> : <></>}
       <div className="app">
         <ToastContainer />
-        <Navbar setShowLogin={setShowLogin} />
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />
