@@ -10,7 +10,7 @@ This repository hosts the source code for **SwiftBite**, a high-performance, mod
 
 ## Features
 
-- **Premium UI/UX**: Rebranded with a modern "SwiftBite" aesthetic using the **Poppins** geometric font.
+- **Premium UI/UX**: Branded with a modern "SwiftBite" aesthetic using the **Poppins** geometric font.
 - **Sliding Capsule Navigation**: An interactive, animated Navbar built with **Framer Motion** that tracks user movement.
 - **Floating Mobile Experience**: A mobile-optimized floating navigation bar with glassmorphism effects.
 - **Smart Food Menu**: Standardized, high-quality food item cards with 3-line text truncation and consistent image aspect ratios.
@@ -21,16 +21,6 @@ This repository hosts the source code for **SwiftBite**, a high-performance, mod
 - **Products Management**: Dynamic admin panel for adding, removing, and updating food items.
 - **Cart Protection**: Intelligent login-gate that prevents guest checkouts to ensure data security.
 
-## Screenshots
-
-![Hero Section](https://i.ibb.co/59cwY75/food-hero.png)
-- **Modern Hero Section**: Featuring responsive layout and optimized branding.
-
-![Products Grid](https://i.ibb.co/JnNQPyQ/food-products.png)
-- **Standardized Food Grid**: Every item card maintains perfect alignment.
-
-![Floating Mobile Menu](https://i.ibb.co/t2LrQ8p/food-cart.png)
-- **Mobile Floating Navigation**: Premium one-handed navigation for mobile devices.
 
 ## Run Locally
 
