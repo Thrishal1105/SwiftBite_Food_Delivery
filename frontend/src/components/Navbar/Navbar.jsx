@@ -9,9 +9,9 @@ import NavHeader from "../ui/NavHeader";
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
   const { getTotalCartAmount, token, setToken, setShowLogin } = useContext(StoreContext);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
 
-  const logout=()=>{
+  const logout = () => {
     localStorage.removeItem("token");
     setToken("");
     toast.success("Logout Successfully")
@@ -26,7 +26,6 @@ const Navbar = () => {
         <NavHeader menu={menu} setMenu={setMenu} />
       </div>
       <div className="navbar-right">
-        <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
           <Link to="/cart">
             <img src={assets.basket_icon} alt="" />
@@ -39,7 +38,7 @@ const Navbar = () => {
           <div className="navbar-profile">
             <img src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown">
-              <li onClick={()=>navigate("/myorders")}><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
+              <li onClick={() => navigate("/myorders")}><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
               <hr />
               <li onClick={logout}><img src={assets.logout_icon} alt="" /><p>Logout</p></li>
             </ul>

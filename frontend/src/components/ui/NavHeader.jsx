@@ -24,9 +24,6 @@ const NavHeader = ({ menu, setMenu }) => {
       <Tab setPosition={setPosition} name="menu" active={hovered === "menu"} onHover={setHovered} onClick={() => setMenu("menu")} href="#explore-menu">
         menu
       </Tab>
-      <Tab setPosition={setPosition} name="mobile-app" active={hovered === "mobile-app"} onHover={setHovered} onClick={() => setMenu("mobile-app")} href="#app-download">
-        mobile-app
-      </Tab>
       <Tab setPosition={setPosition} name="contact-us" active={hovered === "contact-us"} onHover={setHovered} onClick={() => setMenu("contact-us")} href="#footer">
         contact us
       </Tab>

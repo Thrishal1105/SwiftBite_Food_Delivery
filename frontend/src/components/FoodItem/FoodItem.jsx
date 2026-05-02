@@ -5,7 +5,7 @@ import { StoreContext } from "../../context/StoreContext";
 import { toast } from "react-toastify";
 
 const FoodItem = ({ id, name, price, description, image }) => {
-  const {cartItems,addToCart,removeFromCart,url,token,setShowLogin}=useContext(StoreContext); 
+  const { cartItems, addToCart, removeFromCart, url, token, setShowLogin } = useContext(StoreContext);
 
   const handleAddToCart = (id) => {
     if (!token) {
@@ -19,7 +19,7 @@ const FoodItem = ({ id, name, price, description, image }) => {
   return (
     <div className="food-item">
       <div className="food-item-img-container">
-        <img src={url+"/images/"+image} alt="" className="food-item-image" />
+        <img src={url + "/images/" + image} alt="" className="food-item-image" />
         {!cartItems[id] ? (
           <img
             className="add"
@@ -29,9 +29,9 @@ const FoodItem = ({ id, name, price, description, image }) => {
           />
         ) : (
           <div className="food-item-counter">
-            <img onClick={()=>removeFromCart(id)} src={assets.remove_icon_red} alt="" />
+            <img onClick={() => removeFromCart(id)} src={assets.remove_icon_red} alt="" />
             <p>{cartItems[id]}</p>
-            <img onClick={()=>handleAddToCart(id)} src={assets.add_icon_green} alt="" />
+            <img onClick={() => handleAddToCart(id)} src={assets.add_icon_green} alt="" />
           </div>
         )}
       </div>
